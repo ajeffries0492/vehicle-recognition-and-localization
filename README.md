@@ -64,7 +64,7 @@ Running this function will create these records in the annotations folder of you
 # Create TFRecords
 python utils/create_tfrecords.py
 ```
-### Grab Pre-Trained Model 
+#### Grab Pre-Trained Model 
 From [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) download and un-zip the [SSD ResNet50 V1 FPN 640x640 (RetinaNet50)](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz) pre-trained model into the following directory: `workspace\gta_project\pre-trained-models`.
 
 #### Training with Object Detection API
