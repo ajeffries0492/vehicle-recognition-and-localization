@@ -1,6 +1,6 @@
 # Vehicle Recognition and Localization
 
-This github contains code used in the ROB 535 - Self Driving Cars: Perception and Control - perception final project. The perception final project was divided into two tasks: classification and detection of vehicles given perception data. Our team chose to solve this task using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
+This github contains code used in the ROB 535 - Self Driving Cars: Perception and Control - perception final project. The perception final project was divided into two tasks: classification and localization of vehicles given perception data. Our team chose to solve this task using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
 
 <p align="center">
   <img src="doc/img/0053_imageEvaluated.png" width=800>

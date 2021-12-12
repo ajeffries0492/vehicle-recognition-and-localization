@@ -1,0 +1,24 @@
+class_id,class_name,label,Updated Label,NImages
+0,Unknown,0,-1,
+15,Boats,0,-1,14
+16,Helicopters,0,-1,
+17,Planes,0,-1,1
+19,Emergency,0,-1,26
+20,Military,0,-1,
+22,Trains,0,-1,20
+1,Compacts,1,0,222
+2,Sedans,1,0,1423
+4,Coupes,1,0,445
+5,Muscle,1,0,393
+6,SportsClassics,1,0,188
+7,Sports,1,0,753
+8,Super,1,0,77
+3,SUVs,1,1,1302
+9,Motorcycles,2,2,227
+14,Cycles,2,2,4
+10,OffRoad,2,3,544
+11,Industrial,2,4,134
+12,Utility,2,5,744
+13,Vans,2,6,553
+18,Service,0,7,267
+21,Commercial,0,7,236

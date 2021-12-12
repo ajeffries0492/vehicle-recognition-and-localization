@@ -1,7 +1,7 @@
 models/
 venv/
-workspace/gta_project/annotations/*records.*
-workspace/gta_project/annotations/*records.*
+workspace/gta_project/annotations/*.records*
+workspace/gta_project/annotations/*.records*
 workspace/gta_project/**/*.bin
 workspace/gta_project/**/*.jpg
 workspace/gta_project/**/*.pb
@@ -11,3 +11,4 @@ workspace/gta_project/**/*events*
 **/*.npy
 **/*ckpt-*.*
 **/*variables.*
+.DS_Store
