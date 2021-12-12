@@ -3,7 +3,7 @@
 This github contains code used in the ROB 535 - Self Driving Cars: Perception and Control - perception final project. The perception final project was divided into two tasks: classification and detection of vehicles given perception data. Our team chose to solve this task using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
 
 <p align="center">
-  <img src="doc/img/0053_imageEvaluated.png" width=500>
+  <img src="doc/img/0053_imageEvaluated.png" width=800>
 </p>
 
 ## Quick Demo of Model Performance
@@ -64,8 +64,11 @@ Running this function will create these records in the annotations folder of you
 # Create TFRecords
 python utils/create_tfrecords.py
 ```
+### Grab Pre-Trained Model 
+From [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) download and un-zip the [SSD ResNet50 V1 FPN 640x640 (RetinaNet50)](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz) pre-trained model into the following directory: `workspace\gta_project\pre-trained-models`.
+
 #### Training with Object Detection API
-After records are created you can finally start training. Woot woot! To start training run the follwoing command.
+After records are created and you have downloaded the pre-trained model you can finally start training. Woot woot! To start training run the follwoing command.
 
 ```bash
 cd workspace/gta_project
