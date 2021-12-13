@@ -109,12 +109,15 @@ Use this notebook to train the segmented regions.
 Use this notebook to test the model performance.
 *   Inference - [Evaluation](notebooks/TestModelPerformance.ipynb)
 
+## Task 2 - Localization
+Locating other vehicles is just as important as recognizing them in the camera feed. Once the boxes are obtained from Task 1 above, determine the centroid, and find the corresponding index of the LIDAR point cloud (projected on to the image plane). Using this index, extract out that particular LIDAR point's x, y, and z spatial coordinates.
+
 
 ## Contact
-Alexander Jaekel - ajaeckel@umich.edu 
+Alexander Jaeckel - ajaeckel@umich.edu 
 
 Austin Jeffries - ajeffr@umich.edu
 
 Arnav Sharma - arnavsha@umich.edu
 
-Sauraub Sinha - sinhasau@umich.edu 
+Saurabh Sinha - sinhasau@umich.edu 
