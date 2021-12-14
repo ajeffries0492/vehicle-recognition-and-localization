@@ -9,7 +9,7 @@ The perception final project was divided into two tasks: classification and loca
 </p>
 
 ## General Approach
-In our final model our approach consisted of three parts: 1. Running an object detection algorithm to get bounding boxes for vehicle locations in images. 2. Classifying the bounded boxed images using a separate ResNet50 classifier. 3. Localizing vehicle using the LiDAR in the same area and the centroid of the bounded box. See a diagram detailing our approach below.
+In our final model our approach consisted of three parts: 1. Running an SSD based object detection algorithm to get bounding boxes for vehicle locations in images. 2. Classifying the bounded boxed images using a separate ResNet50 classifier. 3. Localizing vehicle using the LiDAR in the same area and the centroid of the bounded box. See a diagram detailing our approach below.
 
 <p align="center">
   <img src="doc/img/approach.png" width=800>
