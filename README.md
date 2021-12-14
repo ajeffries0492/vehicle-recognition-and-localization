@@ -1,6 +1,8 @@
 # Vehicle Recognition and Localization
 
-This github contains code used in the ROB 535 - Self Driving Cars: Perception and Controls - perception final project. The perception final project was divided into two tasks: classification and localization of vehicles given perception data. Our team chose to solve these tasks by primarily using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
+This github contains code used in the ROB 535 perception final project. ROB 535 or Self Driving Cars: Perception and Control is a graduate course offered at the University of Michigan in Ann Arbor. 
+
+The perception final project was divided into two tasks: classification and localization of vehicles given perception data. Our team chose to solve these tasks by primarily using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
 
 <p align="center">
   <img src="doc/img/0043_imageEvaluated.png" width=800>
@@ -13,14 +15,13 @@ In our final model our approach consisted of three parts: 1. Running an object d
   <img src="doc/img/approach.png" width=800>
 </p>
 
-## Task 1 - Vehicle Recognition
-The first task was to recognize a vehicle and classify it into one of three classes. Please see the [classes.csv](data/classes2.csv) for the breakdown of each class. Our approach worked well and allowed us to be in the top 5 of the class submissions - correctly labeling 73% of images - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task1) competition.
-
-
 ### Quick Demo of Model Performance
 
 Use this notebook to demo the model performance. You can download the pre-trained models here.
 *   Inference - [Evaluation on Test Images](notebooks/TestModelPerformance.ipynb) 
+
+## Task 1 - Vehicle Recognition
+The first task was to recognize a vehicle and classify it into one of three classes. Please see the [classes.csv](data/classes2.csv) for the breakdown of each class. Our approach worked well and allowed us to be in the top 5 of the class submissions - correctly labeling 73% of images - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task1) competition.
 
 ### Training
 If you would like to train your own model, our approach is detailed below.
@@ -66,7 +67,7 @@ After your install, it is recommeneded that you test your installation with the 
 python object_detection/builders/model_builder_tf2_test.py
 ```
 
-### Training Part 1
+### Training Part 1 - Object Detection
 
 #### Download Training and Evaluation Data
 Download Training and evlaution data and put into the `workspace\gta_project` directory.
@@ -103,7 +104,7 @@ After the detection model finishes (or if you like what you are seeing before...
 ```bash
 python .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\three_class_resnet50_v1_fpn_120821\pipeline.config --trained_checkpoint_dir .\models\three_class_resnet50_v1_fpn_120821\ --output_directory .\exported-models\three_class_resnet50_v1_fpn_120821
 ```
-### Training Part 2
+### Training Part 2 - Classifier
 After training the object detector it is time to improve classification. The instructors of this project thankfully gave us ground truth boxes that can aid with this.
 
 #### Prepare Data for Use with ResNet50 Classification Model
@@ -125,7 +126,7 @@ Use this notebook to test the model performance.
 *   Inference - [Evaluation](notebooks/TestModelPerformance.ipynb)
 
 ## Task 2 - Localization
-Locating other vehicles is just as important as recognizing them in the camera feed. Once the bounding boxes are obtained from Task 1 above, we determined the centroid of the box, and then found the corresponding index of the LiDAR point cloud (projected on to the image plane). Using this index, we extracted out that particular LiDAR point's x, y, and z spatial coordinates. Our approach worked well and allowed us to be one of the top performing teams - achieving a root mean squared (RMS) error of 10.35 - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task2) competition.
+Locating other vehicles is just as important as recognizing them in the camera feed. Once the bounding boxes are obtained from Task 1 above, we determined the centroid of the box, and then found the corresponding index of the LiDAR point cloud (projected on to the image plane). Using this index, we extracted out that particular LiDAR point's x, y, and z spatial coordinates. Our approach worked well and allowed us to be one of the top performing teams - achieving a root mean squared error (RMSE) of 10.35 - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task2) competition.
 
 
 ## Contact
