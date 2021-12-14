@@ -13,15 +13,16 @@ In our final model our approach consisted of three parts: 1. Running an object d
   <img src="doc/img/approach.png" width=800>
 </p>
 
-## Result Highlights
+## Task 1 - Vehicle Recognition
+The first task was to recognize a vehicle and classify it into one of three classes. Please see the [classes.csv](data/classes2.csv) for the breakdown of each class. Our approach worked well and allowed us to be in the top 5 of the class submissions - correctly labeling 73% of images - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task1) competition.
 
 
-## Quick Demo of Model Performance
+### Quick Demo of Model Performance
 
 Use this notebook to demo the model performance. You can download the pre-trained models here.
 *   Inference - [Evaluation on Test Images](notebooks/TestModelPerformance.ipynb) 
 
-## Training
+### Training
 If you would like to train your own model, our approach is detailed below.
 
 ### Requirements
@@ -123,12 +124,15 @@ Use this notebook to train the segmented regions.
 Use this notebook to test the model performance.
 *   Inference - [Evaluation](notebooks/TestModelPerformance.ipynb)
 
+## Task 2 - Localization
+Locating other vehicles is just as important as recognizing them in the camera feed. Once the boxes are obtained from Task 1 above, determine the centroid, and find the corresponding index of the LIDAR point cloud (projected on to the image plane). Using this index, extract out that particular LIDAR point's x, y, and z spatial coordinates.
+
 
 ## Contact
-Alexander Jaekel - ajaeckel@umich.edu 
+Alexander Jaeckel - ajaeckel@umich.edu 
 
 Austin Jeffries - ajeffr@umich.edu
 
 Arnav Sharma - arnavsha@umich.edu
 
-Sauraub Sinha - sinhasau@umich.edu 
+Saurabh Sinha - sinhasau@umich.edu 
