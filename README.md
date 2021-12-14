@@ -7,7 +7,7 @@ This github contains code used in the ROB 535 - Self Driving Cars: Perception an
 </p>
 
 ## General Approach
-In our final model our approach consisted of three parts: 1. Running an object detection algorithm to get bounding boxes for vehicle locations in images. 2. Classifying the bounded boxed images using a separate ResNet50 classifier. 3. Localizing vehicle using the lidar in the same area and the centroid of the bounded box. See a diagram detailing our approach below.
+In our final model our approach consisted of three parts: 1. Running an object detection algorithm to get bounding boxes for vehicle locations in images. 2. Classifying the bounded boxed images using a separate ResNet50 classifier. 3. Localizing vehicle using the LiDAR in the same area and the centroid of the bounded box. See a diagram detailing our approach below.
 
 <p align="center">
   <img src="doc/img/approach.png" width=800>
@@ -125,7 +125,7 @@ Use this notebook to test the model performance.
 *   Inference - [Evaluation](notebooks/TestModelPerformance.ipynb)
 
 ## Task 2 - Localization
-Locating other vehicles is just as important as recognizing them in the camera feed. Once the boxes are obtained from Task 1 above, determine the centroid, and find the corresponding index of the LIDAR point cloud (projected on to the image plane). Using this index, extract out that particular LIDAR point's x, y, and z spatial coordinates.
+Locating other vehicles is just as important as recognizing them in the camera feed. Once the bounding boxes are obtained from Task 1 above, we determined the centroid of the box, and then found the corresponding index of the LiDAR point cloud (projected on to the image plane). Using this index, we extracted out that particular LiDAR point's x, y, and z spatial coordinates. Our approach worked well and allowed us to be one of the top performing teams - achieving a root mean squared (RMS) error of 10.35 - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task2) competition.
 
 
 ## Contact
