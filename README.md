@@ -1,34 +1,48 @@
 # Vehicle Recognition and Localization
 
-This github contains code used in the ROB 535 - Self Driving Cars: Perception and Control - perception final project. The perception final project was divided into two tasks: classification and localization of vehicles given perception data. Our team chose to solve this task using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
+This github contains code used in the ROB 535 - Self Driving Cars: Perception and Controls - perception final project. The perception final project was divided into two tasks: classification and localization of vehicles given perception data. Our team chose to solve these tasks by primarily using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
 
 <p align="center">
-  <img src="doc/img/0053_imageEvaluated.png" width=800>
+  <img src="doc/img/0043_imageEvaluated.png" width=800>
 </p>
+
+## General Approach
+In our final model our approach consisted of three parts: 1. Running an object detection algorithm to get bounding boxes for vehicle locations in images. 2. Classifying the bounded boxed images using a separate ResNet50 classifier. 3. Localizing vehicle using the lidar in the same area and the centroid of the bounded box. See a diagram detailing our approach below.
+
+<p align="center">
+  <img src="doc/img/approach.png" width=800>
+</p>
+
+## Result Highlights
+
 
 ## Quick Demo of Model Performance
 
 Use this notebook to demo the model performance. You can download the pre-trained models here.
 *   Inference - [Evaluation on Test Images](notebooks/TestModelPerformance.ipynb) 
 
-## Requirements
+## Training
+If you would like to train your own model, our approach is detailed below.
+
+### Requirements
 
 * Python3.8 or 3.9
 * CUDA and CuDNN
+* Tensorflow 2.x
 
-## Set-up
+### Set-up
 In order to get the best performance out of this repository, it is recommened to set up your tensorflow environment on a computer with a GPU and CUDA installed. Please see details [here](https://www.tensorflow.org/install/gpu) on getting CUDA working with Tensorflow.
 
 
 Additionally, it is recommended to install all dependencies in a virtual environment. 
-If on unix creating this environment would look like the following:
+If on unix, creating this environment would look like the following:
 ```bash
 python -m venv venv
 ./venv/bin/activate
 ```
 
 ### Tensorflow 2.x Object Detection API Installation
-Once you have activated your virtual environment you can start installing the TensorFlow 2.x Object Detection API Python Package.
+Once you have activated your virtual environment you can start installing the TensorFlow 2.x Object Detection API Python Package. For a more detailed explanantion on installation please take a look at [this](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html) un-official tutorial.
 
 Begin by cloning the TensorFlow Models repository into your project root directoy. A shallow clone like the following should be sufficent.
 
@@ -51,10 +65,10 @@ After your install, it is recommeneded that you test your installation with the 
 python object_detection/builders/model_builder_tf2_test.py
 ```
 
-### Download Training and Evaluation Data
-Download Training and evlaution data and put into the `workspace\gta_project` directory.
-
 ### Training Part 1
+
+#### Download Training and Evaluation Data
+Download Training and evlaution data and put into the `workspace\gta_project` directory.
 
 #### Prepare Data for Training with Object Detection API
 The TensorFlow Object Detection API requires that data be stored in a TFRecords format prior to training. 
@@ -109,15 +123,12 @@ Use this notebook to train the segmented regions.
 Use this notebook to test the model performance.
 *   Inference - [Evaluation](notebooks/TestModelPerformance.ipynb)
 
-## Task 2 - Localization
-Locating other vehicles is just as important as recognizing them in the camera feed. Once the boxes are obtained from Task 1 above, determine the centroid, and find the corresponding index of the LIDAR point cloud (projected on to the image plane). Using this index, extract out that particular LIDAR point's x, y, and z spatial coordinates.
-
 
 ## Contact
-Alexander Jaeckel - ajaeckel@umich.edu 
+Alexander Jaekel - ajaeckel@umich.edu 
 
 Austin Jeffries - ajeffr@umich.edu
 
 Arnav Sharma - arnavsha@umich.edu
 
-Saurabh Sinha - sinhasau@umich.edu 
+Sauraub Sinha - sinhasau@umich.edu 
