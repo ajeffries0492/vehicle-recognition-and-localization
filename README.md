@@ -17,7 +17,7 @@ In our final model our approach consisted of three parts: 1. Running an SSD base
 
 ### Quick Demo of Model Performance
 
-Use this notebook to demo the model performance. You can download the pre-trained models here.
+Use this notebook to demo the model performance. You can download the Single Shot Detector Detection model [here](https://drive.google.com/drive/folders/1pH2pmQyqDN6En8_RXHp0HNpoEJF--OtH?usp=sharing) and the ResNet classifier model [here](https://drive.google.com/drive/folders/1-hDVnPj4oU-yjnMstrqPgte1Bmro93Ps?usp=sharing).
 *   Inference - [Evaluation on Test Images](notebooks/TestModelPerformance.ipynb) 
 
 ## Task 1 - Vehicle Recognition
@@ -74,7 +74,7 @@ Download Training and evlaution data and put into the `workspace\gta_project` di
 
 #### Prepare Data for Training with Object Detection API
 The TensorFlow Object Detection API requires that data be stored in a TFRecords format prior to training. 
-Running this function will create these records in the annotations folder of your project directory.
+Running this function will create these records in the annotations folder of your project directory. Alternatively, you can grab our TFRecords from [here](https://drive.google.com/drive/folders/1SIm_9rIYGwJGRfQrUK_fviMGg7-aPX5W?usp=sharing).
 
 ```bash
 # Create TFRecords
@@ -83,10 +83,17 @@ python utils/create_tfrecords.py
 #### Grab Pre-Trained Model 
 From [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) download and un-zip the [SSD ResNet50 V1 FPN 640x640 (RetinaNet50)](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz) pre-trained model into the following directory: `workspace\gta_project\pre-trained-models`.
 
+Y
+
 #### Training with Object Detection API
-After records are created and you have downloaded the pre-trained model you can finally start training. Woot woot! To start training run the follwoing command.
+After records are created and you have downloaded the pre-trained model you can finally start training. Woot woot! To start training run the follwoing command. 
 
 ```bash
+# Make Directory for Model Information to Save
+mkdir workspace/gta_project/models/three_class_resnet50_v1_fpn_120821
+# Copy Config to Model Directory
+cp data/TF2ObjectDetectorConfigs/pipeline.config workspace/gta_project/models/three_class_resnet50_v1_fpn_120821/
+
 cd workspace/gta_project
 python model_main_tf2.py --model_dir=models/three_class_resnet50_v1_fpn_120821 --pipeline_config_path=models/three_class_resnet50_v1_fpn_120821/pipeline.config
 ```
@@ -102,12 +109,14 @@ tensorboard --logdir=models/three_class_resnet50_v1_fpn_120821
 
 After the detection model finishes (or if you like what you are seeing before...) export the model for future evaluation.
 ```bash
-python .\exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\three_class_resnet50_v1_fpn_120821\pipeline.config --trained_checkpoint_dir .\models\three_class_resnet50_v1_fpn_120821\ --output_directory .\exported-models\three_class_resnet50_v1_fpn_120821
+python exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\models\three_class_resnet50_v1_fpn_120821\pipeline.config --trained_checkpoint_dir .\models\three_class_resnet50_v1_fpn_120821\ --output_directory .\exported-models\three_class_resnet50_v1_fpn_120821
 ```
 ### Training Part 2 - Classifier
 After training the object detector it is time to improve classification. The instructors of this project thankfully gave us ground truth boxes that can aid with this.
 
 #### Prepare Data for Use with ResNet50 Classification Model
+The already prepared data can be found [here](https://drive.google.com/drive/folders/1-Tz0VCQPgt9pzL3Y7-57ro8ToA0ib4NM?usp=sharing). However, the instructions for preparing the training data our detailed below.
+
 ```bash
 # Summarize Train and Test Data
 python utils\summarize_data.py
@@ -118,10 +127,10 @@ python utils\create_segmented_train_data.py
 python utils\create_segmented_test_data.py
 ```
 #### Training
-Use this notebook to train the segmented regions.
+Use this notebook to train the segmented regions. 
 *   Training - [ResNet50 Training](notebooks/ResNet50_TransferLearning_v1_Regions.ipynb)
 
-### Evaluate Model
+#### Evaluate Model
 Use this notebook to test the model performance.
 *   Inference - [Evaluation](notebooks/TestModelPerformance.ipynb)
 
