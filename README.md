@@ -127,7 +127,7 @@ python utils\create_segmented_train_data.py
 python utils\create_segmented_test_data.py
 ```
 #### Training
-Use this notebook to train the segmented regions. 
+Use this notebook to train the segmented regions. We trained on collab, but if you have the same files it should also work locally.
 *   Training - [ResNet50 Training](notebooks/ResNet50_TransferLearning_v1_Regions.ipynb)
 
 #### Evaluate Model
