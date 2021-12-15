@@ -115,7 +115,7 @@ python exporter_main_v2.py --input_type image_tensor --pipeline_config_path .\mo
 After training the object detector it is time to improve classification. The instructors of this project thankfully gave us ground truth boxes that can aid with this.
 
 #### Prepare Data for Use with ResNet50 Classification Model
-The already prepared data can be found [here](https://drive.google.com/drive/folders/1-Tz0VCQPgt9pzL3Y7-57ro8ToA0ib4NM?usp=sharing). However, the instructions for preparing the training data our detailed below.
+The already prepared data can be found [here](https://drive.google.com/drive/folders/1-Tz0VCQPgt9pzL3Y7-57ro8ToA0ib4NM?usp=sharing). However, the instructions for preparing the training data are detailed below.
 
 ```bash
 # Summarize Train and Test Data
@@ -127,7 +127,7 @@ python utils\create_segmented_train_data.py
 python utils\create_segmented_test_data.py
 ```
 #### Training
-Use this notebook to train the segmented regions. We trained on collab, but if you have the same files it should also work locally.
+Use this notebook to train the segmented regions. We trained on Colab, but if you have the same files it should also work locally. The files in the above link should match those found in the notebook.
 *   Training - [ResNet50 Training](notebooks/ResNet50_TransferLearning_v1_Regions.ipynb)
 
 #### Evaluate Model
