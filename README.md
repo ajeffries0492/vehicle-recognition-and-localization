@@ -21,7 +21,7 @@ Use this notebook to demo the model performance. You can download the Single Sho
 *   Inference - [Evaluation on Test Images](notebooks/TestModelPerformance.ipynb) 
 
 ## Task 1 - Vehicle Recognition
-The first task was to recognize a vehicle and classify it into one of three classes. Please see the [classes.csv](data/classes2.csv) for the breakdown of each class. Our approach worked well and allowed us to be in the top 5 of the class submissions - correctly labeling 73% of images - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task1) competition.
+The first task was to recognize a vehicle and classify it into one of three classes. Please see the [classes.csv](data/classes2.csv) for the breakdown of each class. Our approach worked well and allowed us to be in the top of the class submissions - correctly labeling 73% of images - inside of the [kaggle](https://www.kaggle.com/c/rob535-fall2021-task1) competition.
 
 ### Training
 If you would like to train your own model, our approach is detailed below.
