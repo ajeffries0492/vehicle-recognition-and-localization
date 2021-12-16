@@ -2,7 +2,7 @@
 
 This github contains code used in the ROB 535 perception final project. ROB 535 or Self Driving Cars: Perception and Control is a graduate course offered at the University of Michigan in Ann Arbor. 
 
-The perception final project was divided into two tasks: classification and localization of vehicles given perception data. Our team chose to solve these tasks by primarily using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set.
+The perception final project was divided into two tasks: classification and localization of vehicles given perception data. Our team chose to solve these tasks by primarily using a two part deep learning approach. This github explains details on how to train a similiar model and code for evaulating on a test set. Please see our [report](doc/ROB_535_Perception_Report.pdf) to understand our method in more detail.
 
 <p align="center">
   <img src="doc/img/0043_imageEvaluated.png" width=800>
