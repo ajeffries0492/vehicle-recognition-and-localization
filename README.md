@@ -70,7 +70,7 @@ python object_detection/builders/model_builder_tf2_test.py
 ### Training Part 1 - Object Detection
 
 #### Download Training and Evaluation Data
-Download Training and evlaution data and put into the `workspace\gta_project` directory.
+Download training and evlaution [data](https://drive.google.com/drive/folders/15LPTXADcZGv0ZE262yqdwFHDTnP_R_Bx?usp=sharing) and put into the `workspace\gta_project` directory.
 
 #### Prepare Data for Training with Object Detection API
 The TensorFlow Object Detection API requires that data be stored in a TFRecords format prior to training. 
@@ -83,7 +83,6 @@ python utils/create_tfrecords.py
 #### Grab Pre-Trained Model 
 From [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) download and un-zip the [SSD ResNet50 V1 FPN 640x640 (RetinaNet50)](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz) pre-trained model into the following directory: `workspace\gta_project\pre-trained-models`.
 
-Y
 
 #### Training with Object Detection API
 After records are created and you have downloaded the pre-trained model you can finally start training. Woot woot! To start training run the follwoing command. 
@@ -93,7 +92,7 @@ After records are created and you have downloaded the pre-trained model you can 
 mkdir workspace/gta_project/models/three_class_resnet50_v1_fpn_120821
 # Copy Config to Model Directory
 cp data/TF2ObjectDetectorConfigs/pipeline.config workspace/gta_project/models/three_class_resnet50_v1_fpn_120821/
-
+# Begin Training
 cd workspace/gta_project
 python model_main_tf2.py --model_dir=models/three_class_resnet50_v1_fpn_120821 --pipeline_config_path=models/three_class_resnet50_v1_fpn_120821/pipeline.config
 ```
